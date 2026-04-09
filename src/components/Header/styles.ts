@@ -52,6 +52,9 @@ export const Container = styled.header`
         color: #fff;
         font-weight: 600;
         box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+        cursor: pointer;
+        border: none;
+        font-size: 1.6rem;
         
         &::after {
           display: none;
@@ -60,6 +63,47 @@ export const Container = styled.header`
         &:hover {
           transform: translateY(-2px);
           box-shadow: 0 8px 20px rgba(6, 182, 212, 0.4);
+        }
+      }
+      
+      .resume-dropdown {
+        position: relative;
+        
+        .resume-menu {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          margin-top: 0.5rem;
+          background: rgba(15, 23, 42, 0.95);
+          backdrop-filter: blur(12px);
+          border: 1px solid var(--border-color);
+          border-radius: 1rem;
+          overflow: hidden;
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+          z-index: 1001;
+          min-width: 200px;
+          
+          .resume-option {
+            display: block;
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: transparent;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.4rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            
+            &:hover {
+              background: linear-gradient(135deg, var(--green), var(--blue));
+              color: #fff;
+            }
+            
+            &:not(:last-child) {
+              border-bottom: 1px solid var(--border-color);
+            }
+          }
         }
       }
     }
@@ -154,6 +198,138 @@ export const Container = styled.header`
     background: linear-gradient(135deg, #192a56, #273c75);
   }
 
+  /* Resume Popup Styles */
+  .resume-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  .resume-popup {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    transform: scale(0.8);
+    animation: scaleIn 0.3s ease forwards;
+
+    @keyframes scaleIn {
+      to {
+        transform: scale(1);
+      }
+    }
+  }
+
+  .popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    h3 {
+      color: var(--text-color);
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .close-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-color);
+      font-size: 2.5rem;
+      cursor: pointer;
+      padding: 0;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .popup-content {
+    p {
+      color: var(--text-color);
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      opacity: 0.8;
+    }
+  }
+
+  .language-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+
+    .lang-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background: linear-gradient(135deg, var(--green), var(--blue));
+      border: none;
+      border-radius: 1rem;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 140px;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(6, 182, 212, 0.4);
+      }
+
+      .flag {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+      }
+
+      .lang-text {
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+
+      &.fr-btn {
+        background: linear-gradient(135deg, #002395, #ED2939);
+      }
+
+      &.en-btn {
+        background: linear-gradient(135deg, #012169, #C8102E);
+      }
+    }
+  }
+
   @media (max-width: 960px) {
     padding: 1.8rem 3rem;
 
@@ -186,11 +362,48 @@ export const Container = styled.header`
         font-size: 2rem;
       }
 
+      .resume-dropdown {
+        .resume-menu {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          margin-top: 0;
+          min-width: 250px;
+          
+          .resume-option {
+            font-size: 1.8rem;
+            padding: 1.5rem 2rem;
+          }
+        }
+      }
+
       &.active {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
       }
     }
+
+    .resume-popup {
+      padding: 2rem;
+      margin: 1rem;
+    }
+
+    .popup-header {
+      h3 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .language-buttons {
+      flex-direction: column;
+      align-items: center;
+
+      .lang-btn {
+        width: 100%;
+        max-width: 250px;
+      }
+    }
   }
-`
+`;
