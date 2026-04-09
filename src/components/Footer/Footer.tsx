@@ -9,13 +9,13 @@ import githubIcon from "../../assets/github.svg";
 export function Footer() {
   return (
     <Container className="footer">
-      <a href="https://malekfhima.com" className="logo">
+      <a href="https://portfolio-v2-nu-ebon.vercel.app/" className="logo">
         <span>www.Malek</span>
         <span>Fhima.com</span>
       </a>
       <div>
         <p>
-          © 2026 - Designed and developed by Malek Fhima
+          © 2025 - Designed and developed by Malek Fhima
           {/* <span>❤️</span> */}
         </p>
       </div>

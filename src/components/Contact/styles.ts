@@ -1,75 +1,94 @@
 import styled from "styled-components";
 
-
 export const Container = styled.section`
-  margin-top: 10rem;
+  margin-top: 15rem;
+  margin-bottom: 10rem;
 
-  header{
+  header {
     text-align: center;
-    h2{
-      text-align: center;
-      font-size: 4rem;
+    margin-bottom: 5rem;
+    
+    h2 {
+      font-size: 4.5rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, var(--green) 0%, var(--blue) 50%, var(--pink) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1.5rem;
+      animation: gradientShift 5s ease infinite;
     }
-    p{
-      color: var(--green);
+    
+    p {
+      color: var(--text-color);
+      opacity: 0.8;
       font-weight: 500;
+      font-size: 1.8rem;
     }
   }
 
-  .contacts{
+  .contacts {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
-    place-items: center;
-    margin-top: 1.5rem;
-    div{
+    gap: 3rem;
+    margin-top: 2rem;
+
+    div {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 50%;
-      max-width: 30rem;
       gap: 2rem;
-      background-color: var(--green);
-      border-radius: 1.4rem;
-      padding: 1.6rem 2.8rem;
-      transition: background-color 0.25s;
-      img{
-        width: 4rem;
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(10px);
+      border-radius: 2rem;
+      padding: 2.5rem 4rem;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+
+      img {
+        width: 4.5rem;
+        transition: transform 0.3s ease;
       }
-      a{
-        color: var(--black);
-        font-weight: 500;
+
+      a {
+        color: var(--text-color);
+        font-weight: 600;
+        font-size: 1.8rem;
+        transition: color 0.3s ease;
       }
-      &:hover{
-        background-color: var(--pink);
-        a{
+
+      &:hover {
+        transform: translateY(-8px);
+        background: linear-gradient(135deg, var(--green), var(--blue));
+        border-color: transparent;
+        box-shadow: 0 20px 40px rgba(6, 182, 212, 0.25);
+        
+        a {
           color: #FFF;
+        }
+
+        img {
+          transform: scale(1.1);
+          filter: brightness(0) invert(1);
         }
       }
     }
   }
 
-
-  @media(max-width: 960px){
-    .contacts{
+  @media(max-width: 960px) {
+    .contacts {
       flex-direction: column;
-      div{
+      div {
         width: 100%;
-        
+        max-width: 40rem;
       }
+    }
+    
+    header h2 {
+      font-size: 3.5rem;
     }
   }
-  
 `
-/* old one - 2/1/2023 - 
-@media(max-width: 960px){
-    .contacts{
-      flex-direction: column;
-      div{
-        width: 100%;
-        flex-direction: column;
-      }
-    }
-
-*/

@@ -42,11 +42,11 @@ export function About() {
           <div className="education">
             <h3>Education:</h3>
             <h4>Bac Sciences Informatiques</h4>
-            <p>High School Diploma in Computer Science</p>
+            <p>Lycee Farhat Hached, M'saken, Sousse, Tunis</p>
             <h4>1st Year: Engineering in Computer Systems</h4>
-            <p>ISITCom, Sousse</p>
+            <p>ISITCom, Sousse, Tunis</p>
             <h4>2nd Year: IoT (Internet of Things)</h4>
-            <p>ISITCom Sousse</p>
+            <p>ISITCom, Sousse, Tunis</p>
           </div>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInLeft" delay={550}>
@@ -61,39 +61,72 @@ export function About() {
           <h3>Here are my main skills:</h3>
         </ScrollAnimation>
         <div className="hard-skills">
+          {/* Base Web */}
           <div className="hability">
             <ScrollAnimation animateIn="fadeInUp" delay={0.1 * 1000}>
-              <img src={htmlIcon} alt="HTML" />
+              <img src={htmlIcon} alt="HTML" title="HTML" />
             </ScrollAnimation>
           </div>
           <div className="hability">
             <ScrollAnimation animateIn="fadeInUp" delay={0.11 * 1000}>
-              <img src={cssIcon} alt="CSS" />
+              <img src={cssIcon} alt="CSS" title="CSS" />
             </ScrollAnimation>
           </div>
           <div className="hability">
             <ScrollAnimation animateIn="fadeInUp" delay={0.12 * 1000}>
-              <img src={jsIcon} alt="JavaScript" />
+              <img src={jsIcon} alt="JavaScript" title="JavaScript" />
             </ScrollAnimation>
           </div>
+
+          {/* New MERN Stack & React */}
           <div className="hability">
             <ScrollAnimation animateIn="fadeInUp" delay={0.13 * 1000}>
-              <img src={mysqlIcon} alt="MySQL" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" title="MongoDB" />
             </ScrollAnimation>
           </div>
           <div className="hability">
             <ScrollAnimation animateIn="fadeInUp" delay={0.14 * 1000}>
-              <img src={java} alt="Java" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" title="Express" style={{ filter: 'invert(1)' }} />
             </ScrollAnimation>
           </div>
           <div className="hability">
             <ScrollAnimation animateIn="fadeInUp" delay={0.15 * 1000}>
-              <img src={nodeIcon} alt="Node.js" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" title="React" />
             </ScrollAnimation>
           </div>
           <div className="hability">
             <ScrollAnimation animateIn="fadeInUp" delay={0.16 * 1000}>
-              <img src={bootstrapIcon} alt="Bootstrap" />
+              <img src={nodeIcon} alt="Node.js" title="Node.js" />
+            </ScrollAnimation>
+          </div>
+
+          {/* PHP & Databases */}
+          <div className="hability">
+            <ScrollAnimation animateIn="fadeInUp" delay={0.17 * 1000}>
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" title="PHP" />
+            </ScrollAnimation>
+          </div>
+          <div className="hability">
+            <ScrollAnimation animateIn="fadeInUp" delay={0.18 * 1000}>
+              <img src={mysqlIcon} alt="MySQL" title="MySQL" />
+            </ScrollAnimation>
+          </div>
+
+          {/* Java & Mobile */}
+          <div className="hability">
+            <ScrollAnimation animateIn="fadeInUp" delay={0.19 * 1000}>
+              <img src={java} alt="Java" title="Java" />
+            </ScrollAnimation>
+          </div>
+          <div className="hability">
+            <ScrollAnimation animateIn="fadeInUp" delay={0.20 * 1000}>
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" title="Flutter" />
+            </ScrollAnimation>
+          </div>
+          
+          <div className="hability">
+            <ScrollAnimation animateIn="fadeInUp" delay={0.21 * 1000}>
+              <img src={bootstrapIcon} alt="Bootstrap" title="Bootstrap" />
             </ScrollAnimation>
           </div>
         </div>
